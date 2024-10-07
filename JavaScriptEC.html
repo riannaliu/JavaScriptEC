@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <body>
+            <h1>Java Script Worksheet</h1>
+
+            <script>
+                function mainMenu() {
+                    run = true;
+                    while(run){
+                        choice = prompt("Which problem would you like to run? Enter 1 for Problem 1, 2 for Problem 2:");
+
+                        if (choice === "1") {
+                            Problem1();
+                            run = false;
+                        } else if (choice === "2") {
+                            Problem2();
+                            run = false;
+                        } else if (choice === "3") {
+                            Problem3();
+                            run = false;
+                        } else if (choice === "4") {
+                            Problem4();
+                            run = false;
+                        } else if (choice === "5") {
+                            Problem5();
+                            run = false;
+                        } else if (not(choice)){
+                            run = false;
+                        } else {
+                            document.write("Invalid choice.");
+                        }
+                    }
+                    
+                }
+                mainMenu();
+
+                //
+                function Problem1() {
+                    for(n = 40; n >= 10; n-=2 ){
+                        alert(n);
+                    }
+                        
+                }
+                //Problem1()
+    
+                function Problem2() {
+                    total = 0; 
+                    run = true;
+                    while (run) { 
+                        if (total >= 20){
+                            run = false; 
+                        } else {
+                            num = parseFloat(prompt("Please enter a number: "))
+                            total += num;
+                        }
+                        
+                    }
+                    document.write("<br> Total sum exceeded 20!")
+                    
+                }
+                //Problem2()   
+                function Problem3() {
+                    var arr = []
+                    total = 0; 
+                    run = true;
+                    while (run) {
+                        if (total >= 20){
+                            run = false; 
+                        } else {
+                            num = parseFloat(prompt("Please enter a number: "))
+                            total += num;
+                            arr.push(num);
+                            
+                        } 
+                    }
+                    document.write("[ ")
+                    for(i = 0; i < arr.length; i++) {
+                        document.write( arr[i] + ", ");
+                        
+                    }
+                    document.write("]")
+                }
+                //Problem3()
+                function Problem4(){
+                    songs = []
+                    songs["I Can't Be With You"] = "The Cranberries"
+                    songs["Bad Moon Rising"] = "Creedance Clearwater Revival"
+                    songs["Tiny Dancer"] = "Billy Joel"
+                    songs["Here You Come Again"] = "Dolly Parton"
+                    songs["Shine"] = "Collective Soul"
+                    for(song in songs) {
+                        document.write(song + " by " + songs[song] + " ~ ")
+                    }
+
+                }
+                //Problem4();
+                function Problem5(){
+                    bands = {
+                        "The Cranberries": ["I Can't Be With You", "Zombie", "Ode To My Family"],
+                        "Queen": ["Bohemian Rhapsody", "We Will Rock You", "Another One Bites the Dust"],
+                        "Fleetwood Mac": ["The Chain", "Dreams", "Seven Wonders"]
+                    }
+                    bandName = prompt("Enter a band name: ");
+
+                    if(bands[bandName]) {
+                        songs = bands[bandName];
+                        document.write("Songs by " + bandName + ":<br>");
+                        for( i = 0; i < songs.length;i++){
+                            document.write("- " + songs[i] + "<br>")
+                        }
+                    } else {
+                        document.write("Sorry, we don't have any songs by " + bandName + ".");
+                    }
+
+
+                }
+                //Problem5()
+
+
+            </script>
+
+
+        </body>
+    </head>
+</html>
